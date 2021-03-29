@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather App</title>
+</head>
+<body bgcolor="#8fc1c1">
+    <style>
+        h1 {
+         color : white;
+         background-color :#6495ED;
+         font-size : 50px;
+         padding : 60px;  
+        }
+    </style>
+    <div>
+        <h1 align = "center">Weather Forecasting</h1>
+        <form method="POST" action="">
+            <div>
+                <center> <label for="inputName">Enter City Name</label></center>
+                <br>
+                <center> <input type = "text" name="city" placeholder="City name" required="required"></center>
+            </div>
+
+        </div>
+        <br>
+        <center><button type="submit">Weather Info</button></center>
+    </div>
+</br>
+</br>
+<center>
+    {% block content %}
+    <table border ="1">
+        {% for key,value in result.items() %}
+        <tr>
+            <th>
+                {{key}}
+            </th>
+            <td>
+                {{value}}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</center>
+</body>
+</html>
